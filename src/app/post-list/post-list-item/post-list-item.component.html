@@ -1,0 +1,21 @@
+    <div style="position: relative;" [ngClass]="{'panel' : true,
+                 'panel-success': isLoved(), 
+                 'panel-danger': !isLoved()}">
+      <button style="position:absolute;right:5px!important;top:2.5px!important;" class="btn btn-outline btn-danger"
+        (click)="onRemovePost()">X</button>
+      <!-- Defaultz panel contents -->
+      <div class="panel-heading">{{post.title}}</div>
+      <div style="position: relative;" class="panel-body">
+        <span
+          style="position :absolute;right:0px;top:0px;text-align: right">{{post.createdAt | date:'mm-dd-yyyy , hh:mm a'}}
+        </span>
+        <p>{{post.content}}</p>
+      </div>
+      <div class="panel-footer">
+        <div class="button-group mt-auto">
+          <button (click)="plusLove()" class="btn btn-outline btn-success">j'aime</button>
+          <button (click)="moinsLove()" class="btn btn-outline btn-danger">j'aime pas !</button>
+        </div>
+      </div>
+    </div>
+  
